@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Peter Parker",
+    "company": "Marvel",
+    "phone": "616-616-616"
+  },
+  {
+    "id": 2,
+    "name": "Bruce Wayne",
+    "company": "DC",
+    "phone": "919-399-1939"
+  },
+  {
+    "id": 3,
+    "name": "John Snow",
+    "company": "She's my queen",
+    "phone": "416-647-437"
+  }
+]
