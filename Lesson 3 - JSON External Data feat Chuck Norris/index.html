@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+  <title>JSON Chuck Norris Joke Generator</title>
+  <style>
+    body {
+      padding-bottom: 2%;
+      text-align: center;
+      background-color: #fc5296;
+      background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Chuck Norris Joke Generator</h2>
+    <form>
+      <div>
+        <label for="number">Number of jokes</label>
+        <input type="number" id="number">
+      </div>
+      <div>
+        <button class="get-jokes">Get Jokes</button>
+      </div>
+    </form>
+    <h3>You asked for them, you got em, <span id="span-num"></span> of em'</h3>
+    <ol class="jokes"></ol>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
