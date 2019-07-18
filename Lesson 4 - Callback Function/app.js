@@ -31,11 +31,25 @@ function getPosts() {
   }, 1000);
 }
 
-function createAPost(post, callb) {
-  setTimeout(function () {
-    posts.push(post);
-    callb();
-  }, 2000)
+//UPDATE: MOdified createAPost with a Promise ES6.
+//A promise 'promises' while handling async operations, they promise to do a task after that operation has finished.
+
+
+
+function createAPost(post) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () { //callback passed into promise
+      posts.push(post);       //post is added
+      console.log("hello");   
+      if (!"hello") {         //string is true, !string === false
+        resolve();            //runs the function that is enclosed within resolve();
+      } else {
+        reject('Something went horribly wrong.')  //We use catch the error message.
+      }
+    }, 2000) //Program halts for two seconds.
+    //console.log("hello") executed first before since new Promise handles async operations.
+
+  })
 }
 
 //This  time we use  createAPost and use getPosts as a callback function that runs async.
@@ -43,7 +57,9 @@ function createAPost(post, callb) {
 //First createAPost() wait 2 seconds, it sees that it has a function that is activated.
 //Next, it pushes the object first, then it calls the callback to loop through the object properties.
 
-createAPost({ title: 'Superman', body: 'Man of Steel' }, getPosts);
+createAPost({ title: 'Superman', body: 'Man of Steel' }).then(getPosts).catch(function (err) {
+  document.body.innerHTML = err;
+});
 
 
 
