@@ -5,24 +5,15 @@ document.getElementById('button2').addEventListener("click", getJSON);
 
 function getText() {
   fetch('test.txt')
-    .then(function (result) {
-      return result.text(); //returns a promise, we need to use .then to get the response.
-    })
-    .then(function (data) {
-      console.log(data);
-      document.body.innerHTML += data;
-    })
-    .catch(function (err) {
-      console.log(err);
-    })
+    .then((result) => result.text())
+    .then(data => document.body.innerHTML += data)
+    .catch((err => console.log(err)))
 }
 
 function getJSON() {
   fetch('posts.json')
-    .then(function (result) {
-      return result.json();
-    })
-    .then(function (result) {
+    .then(result => result.text())
+    .then((result) => {
       console.log(result);
       let array = result;
       let html = ``;
@@ -31,7 +22,5 @@ function getJSON() {
       })
       document.body.innerHTML += html;
     })
-    .catch(function (err) {
-      console.log(err);
-    })
+    .catch(err => console.log(err))
 }
