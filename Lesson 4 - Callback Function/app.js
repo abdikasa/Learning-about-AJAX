@@ -40,7 +40,7 @@ function createAPost(post) {
   return new Promise(function (resolve, reject) {
     setTimeout(function () { //callback passed into promise
       posts.push(post);       //post is added
-      console.log("hello");   
+      console.log("hello");
       if (!"hello") {         //string is true, !string === false
         resolve();            //runs the function that is enclosed within resolve();
       } else {
@@ -55,7 +55,7 @@ function createAPost(post) {
 //This  time we use  createAPost and use getPosts as a callback function that runs async.
 //The difference is not only the lexical  placement of the code but how it runs.
 //First createAPost() wait 2 seconds, it sees that it has a function that is activated.
-//Next, it pushes the object first, then it calls the callback to loop through the object properties.
+//Next, it pushes the object first, then checks whether it is a success or failure. 
 
 createAPost({ title: 'Superman', body: 'Man of Steel' }).then(getPosts).catch(function (err) {
   document.body.innerHTML = err;
